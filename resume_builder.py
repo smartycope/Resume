@@ -35,6 +35,9 @@ print_options.margin_right = MARGIN
 # print_options.scale = 0.5 # 0.1 to 2.0
 print_options.shrink_to_fit = False
 
+if 'driver_installed' not in st.session_state:
+    chromedriver_autoinstaller.install()
+    st.session_state['driver_installed'] = True
 
 if 'driver' not in st.session_state:
     options = Options()
@@ -42,12 +45,12 @@ if 'driver' not in st.session_state:
     # make sure it's all in the background
     options.add_argument('--headless')
     options.add_argument("--disable-gpu")
-    st.session_state['driver'] = webdriver.Chrome(service=Service(), options=options)
+    try:
+        st.session_state['driver'] = webdriver.Chrome(service=Service(), options=options)
+    except:
+        st.error('Failed to initialize Chrome driver. See terminal for more details')
+        st.stop()
 driver = st.session_state['driver']
-
-if 'driver_installed' not in st.session_state:
-    chromedriver_autoinstaller.install()
-    st.session_state['driver_installed'] = True
 
 st.set_page_config(page_title="Resume Builder", page_icon=":memo:")
 

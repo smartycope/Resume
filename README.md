@@ -11,7 +11,7 @@ A dynamic resume builder that allows you to build a resume from a set of pre-def
 - `base.css` - The base CSS file
 
 ## Usage
-Obviously, you'll want to customize with your own resume. You'll want to fill in data.json, customize your resume_config.json accordingly, and probably modify base.html and base.css to match your style.
+Obviously, you'll want to customize with your own resume. You'll want to fill in data.json, customize your resume_config.json accordingly, and probably modify base.html,  base.css, and icons.json to match your style.
 
 
 Install dependencies:

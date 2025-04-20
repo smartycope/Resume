@@ -2,7 +2,7 @@
     "projects": {
         "EZRegex": {
             "title": "EZRegex",
-            "subtitle": "{ezregex_icon}  <a href=\"https://ezregex.org\">ezregex.org</a> | {pypi_icon} <a href=\"https://pypi.org/project/ezregex/\">pypi.org/project/ezregex</a>",
+            "subtitle": "{ezregex_icon} <a href=\"https://ezregex.org\">ezregex.org</a> | {pypi_icon} <a href=\"https://pypi.org/project/ezregex/\">pypi.org/project/ezregex</a>",
             "bullets": [
                 "Developed <strong>EZRegex</strong> from scratch, a <strong>Python</strong> library that greatly simplifies Regular Expression syntax",
                 "Includes a web frontend which hosts a suite of tools to aid the development of Regular Expressions",
@@ -19,7 +19,7 @@
         },
         "GeoDoodle": {
             "title": "GeoDoodle",
-            "subtitle": "{geodoodle_icon}  <a href=\"https://smartycope.org/geodoodle\">smartycope.org/geodoodle</a> | {github_icon} <a href=\"https://github.com/smartycope/geodoodle\">github.com/smartycope/geodoodle</a>",
+            "subtitle": "{geodoodle_icon} <a href=\"https://smartycope.org/geodoodle\">smartycope.org/geodoodle</a> | {github_icon2} <a href=\"https://github.com/smartycope/geodoodle\">github.com/smartycope/geodoodle</a>",
             "bullets": [
                 "Developed a web app allowing users to create unique patterns on a graph paper-like interface",
                 "Designed an intuitive frontend with features like drawing, repeating, and seamless pattern export"

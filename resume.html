@@ -9,8 +9,19 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'xkcd-script';
+    /* src: url('./fonts/xkcd-script.ttf') format('truetype'); */
+    src: url('xkcd-script.ttf') format('truetype');
+}
+
+
 body {
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif; */
+    /* font-family: 'Georgia', serif; */
+    /* font-family: 'xkcd-script', sans-serif; */
+    font-family: 'Lato', sans-serif;
+    font-size: 10pt;
     /* margin: 0 auto; */
     /* margin: 0 auto; */
     /* padding: 2em; */
@@ -20,6 +31,7 @@ body {
 }
 
 h1, h2, h3 {
+    font-family: 'xkcd-script', sans-serif;
     margin-top: 1em;
     margin-bottom: 0.5em;
 }
@@ -32,7 +44,7 @@ h2 {
     font-size: 1.4em;
     border-bottom: 2px solid #000;
     padding-bottom: 4px;
-    margin-top: 2em;
+    margin-top: 1.5em;
 }
 
 .header {
@@ -61,10 +73,11 @@ h2 {
 }
 
 .skill-desc-icon{
+    translate: 0px 5px;
     width: 18px;
     height: 18px;
     /* Wrap words around them */
-    float: left;
+    /* float: left; */
     margin-right: 4px;
 }
 
@@ -81,6 +94,23 @@ h2 {
 #skills-section {
     margin-top: 1em;
 }
+
+.section-title{
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+#geodoodle-icon{
+    float: left;
+}
+
+#github-icon2{
+    /* float: inline-start; */
+    /* position: ab; */
+    
+}
+
+
 
 a {
     text-decoration: none;
@@ -109,6 +139,7 @@ li {
 }
 
 #name{
+    font-family: 'Lato', sans-serif;
     font-size: 28pt;
     font-weight: normal;
     text-align: center;
@@ -133,11 +164,6 @@ li {
     color: #494747;
     /* italicize */
     font-style: italic;
-}
-
-.section-title{
-    width: 100%;
-    margin-bottom: 0;;
 }
 
 @media print {
@@ -197,7 +223,7 @@ li {
   <div class="section">
     <h2>Experience</h2>
     
-    <p class="section-title"><strong>EZRegex</strong> <span class="section-desc"><img class="skill-desc-icon" src="https://ezregex.org/favicon.png" alt="EZRegex Icon">  <a href="https://ezregex.org">ezregex.org</a> | <img class="skill-desc-icon" src="https://pypi.org/static/images/logo-small.8998e9d1.svg" alt="PyPI Icon"> <a href="https://pypi.org/project/ezregex/">pypi.org/project/ezregex</a></span></p>
+    <p class="section-title"><strong>EZRegex</strong> <span class="section-desc"><img class="skill-desc-icon" src="https://ezregex.org/favicon.png" alt="EZRegex Icon"> <a href="https://ezregex.org">ezregex.org</a> | <span><img class="skill-desc-icon" src="https://pypi.org/static/images/logo-small.8998e9d1.svg" alt="PyPI Icon"></span> <a href="https://pypi.org/project/ezregex/">pypi.org/project/ezregex</a></span></p>
     <ul>
     <li>Developed <strong>EZRegex</strong> from scratch, a <strong>Python</strong> library that greatly simplifies Regular Expression syntax</li>
 <li>Includes a web frontend which hosts a suite of tools to aid the development of Regular Expressions</li>
@@ -211,7 +237,7 @@ li {
     </ul>
     
 
-    <p class="section-title"><strong>GeoDoodle</strong> <span class="section-desc"><img class="skill-desc-icon" style="translate(0px, 5px)" src="https://github.com/smartycope/geodoodle/blob/master/logo192.png?raw=true" alt="GeoDoodle Icon">  <a href="https://smartycope.org/geodoodle">smartycope.org/geodoodle</a> | <svg class="mini-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg> <a href="https://github.com/smartycope/geodoodle">github.com/smartycope/geodoodle</a></span></p>
+    <p class="section-title"><strong>GeoDoodle</strong> <span class="section-desc"><img id="geodoodle-icon" class="skill-desc-icon" src="https://github.com/smartycope/geodoodle/blob/master/logo192.png?raw=true" alt="GeoDoodle Icon"> <a href="https://smartycope.org/geodoodle">smartycope.org/geodoodle</a> | <span><svg id="github-icon2" class="skill-desc-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></span> <a href="https://github.com/smartycope/geodoodle">github.com/smartycope/geodoodle</a></span></p>
     <ul>
     <li>Developed a web app allowing users to create unique patterns on a graph paper-like interface</li>
 <li>Designed an intuitive frontend with features like drawing, repeating, and seamless pattern export</li>
