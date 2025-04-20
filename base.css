@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* margin: 0 auto; */
+    /* margin: 0 auto; */
+    /* padding: 2em; */
+    margin: 1cm;
+    max-width: 850px;
+    color: #000;
+}
+
+h1, h2, h3 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.4em;
+    border-bottom: 2px solid #000;
+    padding-bottom: 4px;
+    margin-top: 2em;
+}
+
+.header {
+    width: 100%;
+    margin: 0em;
+}
+
+.header img {
+    width: 80px;
+    height: 80px;
+}
+
+#personal-icon{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 95px;
+    height: 95px;
+    /* opacity: 0.9; */
+}
+
+.mini-icon{
+    width: 20px;
+    height: 20px;
+    translate: 0px 5px;
+}
+
+.skill-desc-icon{
+    width: 18px;
+    height: 18px;
+    /* Wrap words around them */
+    float: left;
+    margin-right: 4px;
+}
+
+.contact-info {
+    margin-top: 0.5em;
+    font-size: 1em;
+    text-align: center;
+}
+
+.section {
+    margin-bottom: 1.5em;
+}
+
+#skills-section {
+    margin-top: 1em;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding-left: 1.2em;
+}
+
+li {
+    margin-bottom: 0.3em;
+}
+
+.skills-columns {
+    display: grid;
+    /* I don't know how this works, but it does */
+    /* grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); */
+    grid-template-columns: 50% 50%;
+    gap: 0.5em 1.5em;
+    margin-top: 0.5em;
+}
+
+.skills-columns div {
+    white-space: pre-wrap;
+}
+
+#name{
+    font-size: 28pt;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 0.1em;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#title{
+    font-size: 14pt; 
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 0.1em;
+    margin-top: 0.1em;
+    color: #d6d4d4;
+}
+
+.section-desc{
+    /* text-align: right; */
+    float: right;
+    font-weight: normal;
+    color: #494747;
+    /* italicize */
+    font-style: italic;
+}
+
+.section-title{
+    width: 100%;
+    margin-bottom: 0;;
+}
+
+@media print {
+    body {
+        padding: 0;
+    }
+
+    .page-break {
+        page-break-before: always;
+    }
+}
+
+@page {
+    /* size: a6 portrait; */
+    size: 8.5in 11in;
+    /* The margin, if any, is handled by the body */
+    margin: 0cm;
+}

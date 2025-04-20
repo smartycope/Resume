@@ -1,0 +1,74 @@
+
+{
+    "Software Engineering": {
+        "abbr": "se",
+        "title": "Software Engineer | Backend Developer",
+        "projects": [
+            "EZRegex",
+            "Client Work",
+            "GeoDoodle",
+            "Senior Project"
+        ],
+        "jobs": [
+            "Acer",
+            "Accendero"
+        ],
+        "soft_skills": [],
+        "skills": {
+            "Languages": "Python, TypeScript, R, HTML/CSS",
+            "CI/CD": "Git, Bash Scripting, Jira, Docker",
+            "Backend": "Django, Databases, Linux, REST APIs",
+            "Frontend": "React/JSX, UI/UX, GitHub Pages"
+        }
+    },
+    "Data Science": {
+        "abbr": "ds",
+        "title": "Data Scientist | Software Engineer",
+        "projects": [
+            "EZRegex",
+            "Client Work",
+            "GeoDoodle",
+            "Senior Project",
+            "Building Predictions",
+            "AntAI"
+        ],
+        "jobs": [
+            "Outlier",
+            "Accendero"
+        ],
+        "soft_skills": [],
+        "skills": {
+            "Languages": "Python, TypeScript, R, HTML, SQL",
+            "CI/CD": "Git, Bash Scripting, Jira, Docker",
+            "Backend": "Django, Databases, Linux, REST APIs",
+            "Frontend": "React/JSX, UI/UX, GitHub Pages"
+        }
+    },
+    "Hardware": {
+        "abbr": "cs",
+        "title": "Systems Engineer | Embedded Developer",
+        "projects": [
+            "EZRegex",
+            "Door Alarm",
+            "GeoDoodle",
+            "Self-Balancing Robot"
+        ],
+        "jobs": [
+            "Acer",
+            "Accendero"
+        ],
+        "soft_skills": [
+            "Quick Learner",
+            "Trainable",
+            "Communication",
+            "Technical Writing",
+            "Honesty"
+        ],
+        "skills": {
+            "Languages": "Python, TypeScript, R, HTML/CSS, SQL",
+            "CI/CD": "Git, Bash Scripting, Jira, Docker",
+            "Backend": "Django, Databases, Linux, REST APIs",
+            "Hardware": "Verilog, FPGAs, RTOS, Firmware"
+        }
+    }
+}
