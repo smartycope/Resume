@@ -1,11 +1,9 @@
-
 {
     "Software Engineering": {
         "abbr": "se",
         "title": "Software Engineer | Backend Developer",
         "projects": [
             "EZRegex",
-            "Client Work",
             "GeoDoodle",
             "Senior Project"
         ],
@@ -13,7 +11,11 @@
             "Acer",
             "Accendero"
         ],
-        "soft_skills": [],
+        "soft_skills": [
+            "Quick Learner",
+            "Technical Writing",
+            "Honesty"
+        ],
         "skills": {
             "Languages": "Python, TypeScript, R, HTML/CSS",
             "CI/CD": "Git, Bash Scripting, Jira, Docker",
@@ -27,9 +29,7 @@
         "projects": [
             "EZRegex",
             "Client Work",
-            "GeoDoodle",
             "Senior Project",
-            "Building Predictions",
             "AntAI"
         ],
         "jobs": [
@@ -38,10 +38,10 @@
         ],
         "soft_skills": [],
         "skills": {
-            "Languages": "Python, TypeScript, R, HTML, SQL",
-            "CI/CD": "Git, Bash Scripting, Jira, Docker",
-            "Backend": "Django, Databases, Linux, REST APIs",
-            "Frontend": "React/JSX, UI/UX, GitHub Pages"
+            "Languages": "Python, R, Bash, JavaScript, HTML, SQL",
+            "Graphing": "ggplot2, plotly, matplotlib, seaborn",
+            "Libraries": "pandas, numpy, tidyverse, PySpark, Tensorflow",
+            "DevOps": " Linux, Docker, Databases, APIs, Git/Hub, Jira"
         }
     },
     "Hardware": {
@@ -68,7 +68,7 @@
             "Languages": "Python, TypeScript, R, HTML/CSS, SQL",
             "CI/CD": "Git, Bash Scripting, Jira, Docker",
             "Backend": "Django, Databases, Linux, REST APIs",
-            "Hardware": "Verilog, FPGAs, RTOS, Firmware"
+            "Hardware": " Verilog, FPGAs, Arduino, Rasperry Pi\n"
         }
     }
 }

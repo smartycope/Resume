@@ -34,11 +34,16 @@ h1 {
 }
 
 h2 {
-    font-size: 1.4em;
+    font-size: 1.5em;
     border-bottom: 2px solid #000;
     padding-bottom: 4px;
-    margin-top: 1.5em;
+    margin-top: 1.15em;
 }
+
+/* h3 { */
+    /* font-size: 1.5em; */
+    /* margin-top: 1.5em; */
+/* } */
 
 .header {
     width: 100%;
@@ -72,6 +77,7 @@ h2 {
     /* Wrap words around them */
     /* float: left; */
     margin-right: 4px;
+    margin-left: 4px;
     vertical-align: middle;
 }
 
@@ -90,6 +96,7 @@ h2 {
 }
 
 .section-title{
+    font-size: 1.15em;
     width: 100%;
     margin-bottom: 5px;
 }
@@ -158,6 +165,10 @@ li {
     color: #494747;
     /* italicize */
     font-style: italic;
+}
+
+.soft-skill-bullets{
+
 }
 
 @media print {

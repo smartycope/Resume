@@ -2,7 +2,6 @@ from pathlib import Path
 import streamlit as st
 from streamlit_pdf_viewer import pdf_viewer
 from code_editor import code_editor
-import json
 import base64
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -10,11 +9,12 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.print_page_options import PrintOptions
 # This is my new favorite library
 import chromedriver_autoinstaller
+import jsonc
 
 # I copied these from the raw HTML of https://mui.com/material-ui/material-icons/, then modified the class attr
-ICONS = json.loads(Path('icons.json').read_text())
-CONFIG = json.loads(Path('resume_config.json').read_text())
-DATA = json.loads(Path('data.json').read_text())
+ICONS = jsonc.loads(Path('icons.jsonc').read_text())
+CONFIG = jsonc.loads(Path('resume_config.jsonc').read_text())
+DATA = jsonc.loads(Path('data.jsonc').read_text())
 
 projects = DATA['projects']
 jobs = DATA['jobs']
@@ -67,7 +67,7 @@ def format_skill(skill, description):
     return f'<li><strong>{skill}</strong>: {description}</li>'
 
 def format_soft_skill(skill, description):
-    return f'<p><strong>{skill}</strong>: {description}</p>'
+    return f'<li><strong>{skill}</strong>: {description}</li>'
 
 
 # The actual UI code
@@ -78,9 +78,13 @@ with st.sidebar:
         title = st.text_input('Title', CONFIG[base]['title'])
         "Skills"
         skills = st.data_editor(CONFIG[base]['skills'], use_container_width=True)
-        selected_projects = st.pills('Projects', list(projects.keys()), selection_mode='multi', default=CONFIG[base]['projects']) or []
-        selected_jobs = st.pills('Jobs', list(jobs.keys()), selection_mode='multi', default=CONFIG[base]['jobs']) or []
-        selected_soft_skills = st.pills('Soft Skills', list(soft_skills.keys()), selection_mode='multi', default=CONFIG[base]['soft_skills']) or []
+        # I like pills more, but they're not ordered
+        # selected_projects = st.pills('Projects', list(projects.keys()), selection_mode='multi', default=CONFIG[base]['projects']) or []
+        # selected_jobs = st.pills('Jobs', list(jobs.keys()), selection_mode='multi', default=CONFIG[base]['jobs']) or []
+        # selected_soft_skills = st.pills('Soft Skills', list(soft_skills.keys()), selection_mode='multi', default=CONFIG[base]['soft_skills']) or []
+        selected_projects = st.multiselect('Projects', list(projects.keys()), default=CONFIG[base]['projects']) or []
+        selected_jobs = st.multiselect('Jobs', list(jobs.keys()), default=CONFIG[base]['jobs']) or []
+        selected_soft_skills = st.multiselect('Soft Skills', list(soft_skills.keys()), default=CONFIG[base]['soft_skills']) or []
         reset_html = st.form_submit_button('Generate Resume')
 
     # Generate the HTML
@@ -134,11 +138,11 @@ if l.button('Set as Canonical Version'):
         'soft_skills': selected_soft_skills,
         'skills': skills
     }
-    Path('resume_config.json').write_text(json.dumps(CONFIG, indent=4))
+    Path('resume_config.jsonc').write_text(jsonc.dumps(CONFIG, indent=4))
     st.rerun()
 
 if r.button('Reset'):
     st.rerun()
 
 # Generate and show the PDF
-pdf_viewer(pdf, height=800, pages_vertical_spacing=100, width=3000)
+pdf_viewer(pdf, height=800, pages_vertical_spacing=40, width=3000)

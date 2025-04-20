@@ -3,3 +3,4 @@ streamlit_pdf_viewer
 streamlit_code_editor
 chromedriver-autoinstaller
 selenium
+json-with-comments
