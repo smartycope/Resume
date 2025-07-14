@@ -2,6 +2,12 @@
     "Software Engineering": {
         "abbr": "se",
         "title": "Software Engineer | Backend Developer",
+        "contact_info": {
+            "phone": true,
+            "email": true,
+            "github": true,
+            "website": true
+        },
         "projects": [
             "EZRegex",
             "GeoDoodle",
@@ -26,6 +32,12 @@
     "Data Science": {
         "abbr": "ds",
         "title": "Data Scientist | Software Engineer",
+        "contact_info": {
+            "phone": true,
+            "email": true,
+            "github": true,
+            "website": true
+        },
         "projects": [
             "EZRegex",
             "Client Work",
@@ -47,6 +59,12 @@
     "Hardware": {
         "abbr": "cs",
         "title": "Systems Engineer | Embedded Developer",
+        "contact_info": {
+            "phone": true,
+            "email": true,
+            "github": true,
+            "website": true
+        },
         "projects": [
             "EZRegex",
             "Door Alarm",
@@ -70,5 +88,32 @@
             "Backend": "Django, Databases, Linux, REST APIs",
             "Hardware": " Verilog, FPGAs, Arduino, Rasperry Pi\n"
         }
+    },
+    "Other": {
+        "abbr": "misc",
+        "title": "",
+        "contact_info": {
+            "phone": true,
+            "email": true,
+            "github": false,
+            "website": true
+        },
+        "projects": [],
+        "jobs": [
+            "Acer Boring",
+            "Head of Maintenance",
+            "Groundskeeper"
+        ],
+        "soft_skills": [
+            "Trainable",
+            "Communication",
+            "Technical Writing",
+            "Quick Learner"
+        ],
+        "skills": {
+            "Maintenance": "Electrical, Plumbing, Walls",
+            "Cleaning": "Bathrooms, Storefront, Floors"
+        },
+        "additional_education": "",
     }
 }

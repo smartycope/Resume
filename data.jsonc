@@ -99,7 +99,7 @@
     "jobs": {
         "Acer": {
             "title": "Acer Service Corporation",
-            "subtitle": "Certified Repair Technician | December 2024 - Present",
+            "subtitle": "Certified Repair Technician | December 2024 - June 2025",
             "bullets": [
                 "Fixed iRobot Roombas, diagnosing problems, debugging <strong>firmware</strong>, and writing detailed reports",
                 "Wrote <strong>custom software</strong> to streamline my daily workflow, increasing efficiency by more than 30%",
@@ -130,7 +130,60 @@
                 "Provided technical support and maintenance services for an assisted living center, successfully maintaining and improving the facility's infrastructure and IT systems over several years",
                 "Had the patience of a saint setting up and teaching elderly residents how to use their technology"
             ]
-        }
+        },
+        "Head of Maintenance": {
+            "title": "Head of Maintenance",
+            "subtitle": "Head of Maintenance | April 2019 - July 2024",
+            "bullets": [
+                "Provided technical support and maintenance services for an assisted living center, successfully maintaining and improving the facility's infrastructure and IT systems over several years",
+                "Worked with task management software to finish tasks in an efficient and timely manner",
+                "Reliably delivered, set up, removed, and cleaned hospital beds for elderly residents on hospice",
+                "Effectively kept the facilities fixed, clean, and in working order",
+                "In charge of all maintenance tasks, including changing lights, cleaning floors and bathrooms, fixing floorboards and walls, and responding to maintenance requests",
+                "Created and improved on the old maintenance system",
+                "Maintained grounds keeping grass trimmed, cleaning up litter, and ensuring the grounds were managed well",
+                "Oversaw all garbage collection in the facility for several years"
+            ]
+        },
+        "Groundskeeper": {
+            "title": "Groundskeeper",
+            "subtitle": "Groundskeeper | April 2019 - July 2024",
+            "bullets": [
+                "Maintained grounds of a 15 acre vacation site, keeping the grass and trees trimmed and foliage picked up",
+                "Assisted in improving the grounds, installing sprinklers, running equipment, and building several installments on the property"
+            ]
+        },
+        "Renovations Specialist": {
+            "title": "Renovations Specialist",
+            "subtitle": "Renovations Specialist | April 2019 - July 2024",
+            "bullets": [
+                "Assisted in building, refurbishing, and remodeling houses",
+                "Helped repair and refurbish several houses, including installing doors, floorboards, ceiling fans, carpet, and walls"
+            ]
+        },
+        "Snow Shoveler": {
+            "title": "Snow Shoveler",
+            "subtitle": "Snow Shoveler | November 2021 - April 2022",
+            "bullets": [
+                "Was on call 24/7 for routine snow maintenance on driveways, sidewalks, parking lots, and roofs"
+            ]
+        },
+        "Intern Boring": {
+            "title": "Intern",
+            "subtitle": "Accendero | February 2024 - July 2024",
+            "bullets": [
+                "Wrote backend code for pharmaceutical clients"
+            ]
+        },
+        "Acer Boring": {
+            "title": "Acer Service Corporation",
+            "subtitle": "Certified Repair Technician | December 2024 - June 2025",
+            "bullets": [
+                "Fixed iRobot Roombas, diagnosing problems, debugging firmware, and writing detailed reports",
+                "Maintained morale in a routine warehouse environment, doing the same thing every day",
+                "Communicated effectively with clients and coworkers, while effectively keeping track of parts and inventory"
+            ]
+        },
     },
     "soft_skills": {
         // "Quick Learner": "At Accendero, I went from never having written a line of JavaScript to contributing helpful commits in one week",

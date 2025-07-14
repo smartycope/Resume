@@ -10,6 +10,8 @@ from selenium.webdriver.common.print_page_options import PrintOptions
 # This is my new favorite library
 import chromedriver_autoinstaller
 import jsonc
+import re
+import clipboard
 
 # I copied these from the raw HTML of https://mui.com/material-ui/material-icons/, then modified the class attr
 ICONS = jsonc.loads(Path('icons.jsonc').read_text())
@@ -30,7 +32,7 @@ print_options.margin_top = MARGIN
 print_options.margin_bottom = MARGIN
 print_options.margin_left = MARGIN
 print_options.margin_right = MARGIN
-# Force only the first page, just in case there's an empty page or something 
+# Force only the first page, just in case there's an empty page or something
 # print_options.page_ranges = ["1"]
 # print_options.scale = 0.5 # 0.1 to 2.0
 print_options.shrink_to_fit = False
@@ -69,6 +71,55 @@ def format_skill(skill, description):
 def format_soft_skill(skill, description):
     return f'<li><strong>{skill}</strong>: {description}</li>'
 
+def generate_contact_section(phone, email, github, website):
+    s = []
+    if phone:
+        s.append(f'{ICONS["phone_icon"]} (208) 513-0110')
+    if email:
+        s.append(f'{ICONS["email_icon"]} <a href="mailto:smartycope@gmail.com">smartycope@gmail.com</a>')
+    if github:
+        s.append(f'{ICONS["github_icon"]} <a href="https://github.com/smartycope">github.com/smartycope</a>')
+    if website:
+        s.append(f'{ICONS["website_icon"]} <a href="https://smartycope.org">smartycope.org</a>')
+    return ' | '.join(s)
+
+class SemVer:
+    """ Semantic Versioning """
+    def __init__(self, text):
+        s = text.split('.')
+        self.major, self.minor, self.patch = int(s[0]), int(s[1]), int(s[2])
+    def __gt__(self, other):
+        if self.major > other.major:
+            return True
+        elif self.major == other.major and self.minor > other.minor:
+            return True
+        elif self.major == other.major and self.minor == other.minor and self.patch > other.patch:
+            return True
+        return False
+    def __eq__(self, other):
+        return self.major == other.major and self.minor == other.minor and self.patch == other.patch
+    def __str__(self):
+        return f'{self.major}.{self.minor}.{self.patch}'
+    def __hash__(self):
+        return hash((self.major, self.minor, self.patch))
+    __repr__ = __str__
+
+    @staticmethod
+    def extract(text):
+        match = re.search(r'.*(\d+\.\d+\.\d+).*', text)
+        if match:
+            return SemVer(match.group(1))
+        return None
+
+    def increment(self, amt=1):
+        self.patch += amt
+        return self
+
+def get_last_version(folder):
+    versions = [SemVer.extract(pdf.name) for pdf in Path(folder).expanduser().glob('*.pdf')]
+    versions = [v for v in versions if v is not None]
+    return max(versions, default=SemVer('0.0.0'))
+
 
 # The actual UI code
 with st.sidebar:
@@ -76,8 +127,21 @@ with st.sidebar:
     base = st.selectbox('Base', CONFIG.keys())
     with st.form('config'):
         title = st.text_input('Title', CONFIG[base]['title'])
+        "Contact Info"
+        l, r = st.columns(2)
+        with l:
+            phone = st.checkbox('Phone', value=CONFIG[base]['contact_info']['phone'])
+            email = st.checkbox('Email', value=CONFIG[base]['contact_info']['email'])
+        with r:
+            github = st.checkbox('Github', value=CONFIG[base]['contact_info']['github'])
+            website = st.checkbox('Website', value=CONFIG[base]['contact_info']['website'])
         "Skills"
         skills = st.data_editor(CONFIG[base]['skills'], use_container_width=True)
+        if st.form_submit_button('Add Skill'):
+            skills = CONFIG[base]['skills']
+            skills['tmp'] = ''
+            CONFIG[base]['skills'] = skills
+            st.rerun()
         # I like pills more, but they're not ordered
         # selected_projects = st.pills('Projects', list(projects.keys()), selection_mode='multi', default=CONFIG[base]['projects']) or []
         # selected_jobs = st.pills('Jobs', list(jobs.keys()), selection_mode='multi', default=CONFIG[base]['jobs']) or []
@@ -85,11 +149,23 @@ with st.sidebar:
         selected_projects = st.multiselect('Projects', list(projects.keys()), default=CONFIG[base]['projects']) or []
         selected_jobs = st.multiselect('Jobs', list(jobs.keys()), default=CONFIG[base]['jobs']) or []
         selected_soft_skills = st.multiselect('Soft Skills', list(soft_skills.keys()), default=CONFIG[base]['soft_skills']) or []
+        additional_education = st.text_area('Additional Education', CONFIG[base].get('additional_education', ''))
         reset_html = st.form_submit_button('Generate Resume')
+
+    if not len(selected_projects):
+        CSS += '\n#experience-section { display: none; }'
+    if not len(selected_jobs):
+        CSS += '\n#work-experience-section { display: none; }'
+    if not len(selected_soft_skills):
+        CSS += '\n#soft-skills-section { display: none; }'
+
+
 
     # Generate the HTML
     formatted = HTML.format(
         css=CSS,
+        additional_education=additional_education,
+        contact_section=generate_contact_section(phone, email, github, website),
         title=title,
         projects='\n'.join(format_section(projects[i]) for i in selected_projects),
         jobs='\n'.join(format_section(jobs[i]) for i in selected_jobs),
@@ -123,20 +199,45 @@ with st.sidebar:
     pdf = base64.b64decode(driver.print_page(print_options))
 
     # Download buttons
-    version = st.text_input('Version', '7.')
+    folder = st.text_input('Folder', '~/Documents/Job Stuff/Resumes')
+    new_version = get_last_version(folder).increment()
+    default = f'{new_version}.{CONFIG[base]["abbr"]}'
+    name = st.text_input('Filename', placeholder=default)
+    if name == '':
+        name = default
+
+    name = f'Resumé {name}'.strip()
     l, r = st.columns(2, gap='small')
-    l.download_button('Download PDF', pdf, f'My Resumé {version}.{CONFIG[base]["abbr"]}.pdf', 'application/pdf')
-    r.download_button('Download HTML', html, f'My Resumé {version}.{CONFIG[base]["abbr"]}.html', 'text/html')
+    if l.button('Save PDF'):
+        Path(f'{folder}/{name}.pdf').expanduser().write_bytes(pdf)
+        st.success(f'Saved {name}.pdf')
+        st.button('Copy filepath', on_click=clipboard.copy, args=(Path(f'{folder}/{name}.pdf').expanduser(),))
+
+    if r.button('Save HTML'):
+        Path(f'{folder}/{name}.html').expanduser().write_text(html)
+        st.success(f'Saved {name}.html')
+        st.button('Copy filepath', on_click=clipboard.copy, args=(Path(f'{folder}/{name}.html').expanduser(),))
+
+    l.download_button('Download PDF', pdf, f'{name}.pdf', 'application/pdf')
+    r.download_button('Download HTML', html, f'{name}.html', 'text/html')
+
 
 l, r = st.columns(2, gap='large')
 if l.button('Set as Canonical Version'):
     CONFIG[base] = {
         'abbr': CONFIG[base]['abbr'],
         'title': title,
+        'contact_info': {
+            'phone': phone,
+            'email': email,
+            'github': github,
+            'website': website
+        },
         'projects': selected_projects,
         'jobs': selected_jobs,
         'soft_skills': selected_soft_skills,
-        'skills': skills
+        'skills': skills,
+        'additional_education': additional_education
     }
     Path('resume_config.jsonc').write_text(jsonc.dumps(CONFIG, indent=4))
     st.rerun()
