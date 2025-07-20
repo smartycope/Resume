@@ -1,0 +1,39 @@
+{
+    "Dog Training": {
+        "abbr": "training",
+        "title": "AI Technician | Veterinary Assistant | Dog Trainer",
+        "contact_info": {
+            "phone": true,
+            "email": true,
+            "github": false,
+            "website": false
+        },
+        "projects": [
+            "Beretta",
+            "Trixie",
+            "Millie"
+        ],
+        "jobs": [
+            "K9 Direction",
+            "Crate Escape Memphis",
+            "Service Dogs",
+            "Trick Dogs"
+        ],
+        "education": [
+            "BYUI"
+        ],
+        "additional_education": "",
+        "order": [
+            "education",
+            "projects",
+            "jobs"
+        ],
+        "section_titles": {
+            "skills": "Skills",
+            "projects": "Projects",
+            "jobs": "Work Experience",
+            "soft_skills": "Soft Skills",
+            "education": "Education"
+        }
+    }
+}

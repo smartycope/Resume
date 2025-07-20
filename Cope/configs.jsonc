@@ -32,17 +32,17 @@
             "BYUI"
         ],
         "order": [
+            "skills",
+            "education",
             "projects",
             "jobs",
-            "soft_skills",
-            "skills",
-            "education"
+            "soft_skills"
         ],
         "section_titles": {
             "skills": "Skills",
             "projects": "Projects",
             "jobs": "Work Experience",
-            "soft_skills": "stuff",
+            "soft_skills": "Soft Skills",
             "education": "Education"
         }
     },

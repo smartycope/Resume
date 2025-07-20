@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Copeland Carter - Resume</title>
-  <style>
-    * {
+
+        <!DOCTYPE html>
+        <html lang="en">
+        
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Moriah Carter - Resume</title>
+            <style>* {
     box-sizing: border-box;
 }
-
-@font-face {
-    font-family: 'xkcd-script';
-    /* src: url('./fonts/xkcd-script.ttf') format('truetype'); */
-    src: url('xkcd-script.ttf') format('truetype');
-}
-
 
 body {
     /* font-family: Arial, sans-serif; */
@@ -115,10 +109,8 @@ h2 {
 #github-icon2{
     /* float: inline-start; */
     /* position: ab; */
-    
+
 }
-
-
 
 a {
     text-decoration: none;
@@ -133,7 +125,7 @@ li {
     margin-bottom: 0.3em;
 }
 
-.skills-columns {
+.skills-bullets {
     display: grid;
     /* I don't know how this works, but it does */
     /* grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); */
@@ -142,7 +134,7 @@ li {
     margin-top: 0.5em;
 }
 
-.skills-columns div {
+.skills-bullets div {
     white-space: pre-wrap;
 }
 
@@ -157,7 +149,7 @@ li {
 }
 
 #title{
-    font-size: 14pt; 
+    font-size: 14pt;
     text-align: center;
     font-weight: normal;
     margin-bottom: 0.1em;
@@ -165,7 +157,16 @@ li {
     color: #d6d4d4;
 }
 
-.section-desc{
+.education-desc{
+    /* text-align: right; */
+    /* float: right; */
+    /* font-weight: normal; */
+    /* color: #494747; */
+    /* italicize */
+    font-style: italic;
+}
+
+.subsection-subtitle{
     /* text-align: right; */
     float: right;
     font-weight: normal;
@@ -194,82 +195,147 @@ li {
     /* The margin, if any, is handled by the body */
     margin: 0cm;
 }
-
-#experience-section { display: none; }
-  </style>
-</head>
-<body>
-  <img id="personal-icon" src="https://github.com/smartycope/geodoodle/blob/master/logo512.png?raw=true" alt="Personal Icon">
-
-  <div class="header">
-    <h1 id="name">Copeland Carter</h1>
-    <h2 id="title"></h2>
-  </div>
-
-  <div class="contact-info">
-    <svg class="mini-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02z"></path></svg> (208) 513-0110 | <svg class="mini-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4-8 5-8-5V6l8 5 8-5z"></path></svg> <a href="mailto:smartycope@gmail.com">smartycope@gmail.com</a> | <svg class="mini-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2m6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56M12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96M4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56m2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8M12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96M14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2m.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2z"></path></svg> <a href="https://smartycope.org">smartycope.org</a>
-  </div>
-
-  <div class="section" id="skills-section">
-    <h2>Skills</h2>
-    <ul class="skills-columns">
-      <li><strong>Maintenance</strong>: Electrical, Plumbing, Walls</li>
-<li><strong>Cleaning</strong>: Bathrooms, Storefront, Floors</li>
-    </ul>
-  </div>
-
-  <div class="section" id="education-section">
-    <h2>Education</h2>
-    <p class="section-title"><strong>Brigham Young University - Idaho</strong>  <span class="section-desc">Student | April 2019 - July 2024</span><br>
-    <p style="font-style: italic;">Graduated with a Bachelor's in <strong>Computer Engineering</strong> with a <strong>Machine Learning</strong> Certificate</p>
-    <ul><li>Took and passed chem 105 and associated lab</li></ul>
-  </div>
-
-  <div class="section" id="experience-section">
-    <h2>Experience</h2>
+</style>
+        </head>
+        
+        <body>
+            
+            <div class="header">
+            <h1 id="name">Moriah Carter</h1>
+            <h2 id="title">AI Technician | Veterinary Assistant | Dog Trainer</h2>
+        </div>
+            
+        <div class="contact-info">
+            <svg class="mini-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02z"></path></svg> (901) 453-9582 | <svg class="mini-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4-8 5-8-5V6l8 5 8-5z"></path></svg> <a href="mailto:moriahfaithann0409@gmail.com">moriahfaithann0409@gmail.com</a>
+        </div>
     
-  </div>
-
-  <div class="section" id="work-experience-section">
-    <h2>Work Experience</h2>
+            
+        <div class="section" id="education-section">
+            <h2>Education</h2>
+            
+        <p class="education subsection" id="education-BYUI">
+            <strong id="education-BYUI-title" class="education-title subsection-title">
+                Brigham Young University - Idaho
+            </strong>
+            <span id="education-BYUI-subtitle" class="education-subtitle subsection-subtitle">
+                April 2019 - July 2024
+            </span>
+        </p>
+        <p class="education-desc subsection-desc" id="education-BYUI-desc">Graduated with a Bachelor of Science in Animal Science with a Pre-Veterinarian focus</p>
     
-    <p class="section-title"><strong>Acer Service Corporation</strong> <span class="section-desc">Certified Repair Technician | December 2024 - June 2025</span></p>
-    <ul>
-    <li>Fixed iRobot Roombas, diagnosing problems, debugging firmware, and writing detailed reports</li>
-<li>Maintained morale in a routine warehouse environment, doing the same thing every day</li>
-<li>Communicated effectively with clients and coworkers, while effectively keeping track of parts and inventory</li>
-    </ul>
+        </div>
     
 
-    <p class="section-title"><strong>Head of Maintenance</strong> <span class="section-desc">Head of Maintenance | April 2019 - July 2024</span></p>
-    <ul>
-    <li>Provided technical support and maintenance services for an assisted living center, successfully maintaining and improving the facility's infrastructure and IT systems over several years</li>
-<li>Worked with task management software to finish tasks in an efficient and timely manner</li>
-<li>Reliably delivered, set up, removed, and cleaned hospital beds for elderly residents on hospice</li>
-<li>Effectively kept the facilities fixed, clean, and in working order</li>
-<li>In charge of all maintenance tasks, including changing lights, cleaning floors and bathrooms, fixing floorboards and walls, and responding to maintenance requests</li>
-<li>Created and improved on the old maintenance system</li>
-<li>Maintained grounds keeping grass trimmed, cleaning up litter, and ensuring the grounds were managed well</li>
-<li>Oversaw all garbage collection in the facility for several years</li>
-    </ul>
+        <div class="section" id="projects-section">
+            <h2>Projects</h2>
+            
+        <p class="projects subsection" id="projects-Beretta">
+            <strong id="projects-Beretta-title" class="projects-title subsection-title">
+                Beretta
+            </strong>
+            <span id="projects-Beretta-subtitle" class="projects-subtitle subsection-subtitle">
+                Belgian Malinois Mix
+            </span>
+        </p>
+        <p class="projects-desc subsection-desc" id="projects-Beretta-desc">Beretta is an 18 month old Belgian Malinois Mix. She was adopted 9 months ago and in that time she has learned canine freestyle. Tricks include jump over arms, orbit, rebound, leg weaves, and backstall. Beretta has also been taught on agility equipment to incorporate into routines. Beretta is currently learning footstall and being introduced to disc.</p>
     
 
-    <p class="section-title"><strong>Groundskeeper</strong> <span class="section-desc">Groundskeeper | April 2019 - July 2024</span></p>
-    <ul>
-    <li>Maintained grounds of a 15 acre vacation site, keeping the grass and trees trimmed and foliage picked up</li>
-<li>Assisted in improving the grounds, installing sprinklers, running equipment, and building several installments on the property</li>
-    </ul>
+        <p class="projects subsection" id="projects-Trixie">
+            <strong id="projects-Trixie-title" class="projects-title subsection-title">
+                Trixie
+            </strong>
+            <span id="projects-Trixie-subtitle" class="projects-subtitle subsection-subtitle">
+                Standard Poodle
+            </span>
+        </p>
+        <p class="projects-desc subsection-desc" id="projects-Trixie-desc">Trixie is an 8 year old Standard Poodle. She was my first dog and allowed me to explore many training avenues. Trixie does best at trick events such as high jump, but can also perform in canine freestyle as she has at parades and dog based events. She most recently started on scentwork in barnhunt and is very enthusiastic in the sport.</p>
     
-  </div>
 
-  <div class="section" id="soft-skills-section">
-    <h2>Soft Skills</h2>
-    <ul class="soft-skill-bullets">
-    <li><strong>Trainable</strong>: Exceeded training expectations at Acer, quickly outpacing peers and assuming management responsibilities before the training period was completed</li>
-<li><strong>Communication</strong>: Effectively communicated technical issues to non-technical residents while head of IT at an assisted living facility</li>
-<li><strong>Technical Writing</strong>: Generated dozens of detailed repair summaries daily, ensuring traceability and transparency of work</li>
-<li><strong>Quick Learner</strong>: Contributed meaningful JavaScript commits at Accendero after a single week of learning the language</li>
-    </ul>
-  </div>
-</body>
-</html>
+        <p class="projects subsection" id="projects-Millie">
+            <strong id="projects-Millie-title" class="projects-title subsection-title">
+                Millie
+            </strong>
+            <span id="projects-Millie-subtitle" class="projects-subtitle subsection-subtitle">
+                Beagle
+            </span>
+        </p>
+        <p class="projects-desc subsection-desc" id="projects-Millie-desc">Millie is a 5 year old Beagle. She will do anything for a scrap of food. This has allowed me to explore further into scentwork using traditional scents. Millie is also known to enjoy performing tricks and has been known to do tandem routines with Trixie.</p>
+    
+        </div>
+    
+
+        <div class="section" id="work-experience-section">
+            <h2>Work Experience</h2>
+            
+        <p class="jobs subsection" id="jobs-K9 Direction">
+            <strong id="jobs-K9 Direction-title" class="jobs-title subsection-title">
+                K9 Direction
+            </strong>
+            <span id="jobs-K9 Direction-subtitle" class="jobs-subtitle subsection-subtitle">
+                Service Dog Trainer
+            </span>
+        </p>
+        
+            <ul class="jobs-bullets subsection-bullets" id="jobs-K9 Direction-bullets">
+                <li class="jobs-K9 Direction-bullet jobs-bullet subsection-bullet">Taught basic behaviors to prospective service dogs for a non-profit organization, and shaped those behaviors into more advanced tasks, including medical alert, psychiatric response, and mobility tasks</li>
+<li class="jobs-K9 Direction-bullet jobs-bullet subsection-bullet">Conducted dog training sessions daily in various locations including home, parks, and non-pet friendly businesses</li>
+            </ul>
+        
+    
+
+        <p class="jobs subsection" id="jobs-Crate Escape Memphis">
+            <strong id="jobs-Crate Escape Memphis-title" class="jobs-title subsection-title">
+                Crate Escape Memphis
+            </strong>
+            <span id="jobs-Crate Escape Memphis-subtitle" class="jobs-subtitle subsection-subtitle">
+                Dog Trainer
+            </span>
+        </p>
+        
+            <ul class="jobs-bullets subsection-bullets" id="jobs-Crate Escape Memphis-bullets">
+                <li class="jobs-Crate Escape Memphis-bullet jobs-bullet subsection-bullet">Trained desired behaviors for companion dogs in pet homes</li>
+<li class="jobs-Crate Escape Memphis-bullet jobs-bullet subsection-bullet">Taught dogs in a variety of locations including at home, parks, and pet friendly stores</li>
+<li class="jobs-Crate Escape Memphis-bullet jobs-bullet subsection-bullet">Maintained dog health while in my care including feeding, grooming, and bathing</li>
+<li class="jobs-Crate Escape Memphis-bullet jobs-bullet subsection-bullet">Professionally communicated training methods and plans with owners to achieve the desired behaviors with their dogs and puppies</li>
+            </ul>
+        
+    
+
+        <p class="jobs subsection" id="jobs-Service Dogs">
+            <strong id="jobs-Service Dogs-title" class="jobs-title subsection-title">
+                Service Dogs
+            </strong>
+            <span id="jobs-Service Dogs-subtitle" class="jobs-subtitle subsection-subtitle">
+                Dog Trainer
+            </span>
+        </p>
+        
+            <ul class="jobs-bullets subsection-bullets" id="jobs-Service Dogs-bullets">
+                <li class="jobs-Service Dogs-bullet jobs-bullet subsection-bullet">Independently trained medical alert, psychiatric alert and response, and mobility tasks. </li>
+<li class="jobs-Service Dogs-bullet jobs-bullet subsection-bullet">Tasks included heart rate alert, deep pressure therapy, directed retrieval, counterbalance, stability, blocking, public access etiquette, turning lights off, medication retrieval, and more </li>
+<li class="jobs-Service Dogs-bullet jobs-bullet subsection-bullet">Trained behaviors were reliable in varying environments from the classroom to Disney World for multiple years</li>
+            </ul>
+        
+    
+
+        <p class="jobs subsection" id="jobs-Trick Dogs">
+            <strong id="jobs-Trick Dogs-title" class="jobs-title subsection-title">
+                Trick Dogs
+            </strong>
+            <span id="jobs-Trick Dogs-subtitle" class="jobs-subtitle subsection-subtitle">
+                Dog Trainer
+            </span>
+        </p>
+        
+            <ul class="jobs-bullets subsection-bullets" id="jobs-Trick Dogs-bullets">
+                <li class="jobs-Trick Dogs-bullet jobs-bullet subsection-bullet">Trained a variety of tricks ranging in difficulty from basic obedience to advanced.</li>
+<li class="jobs-Trick Dogs-bullet jobs-bullet subsection-bullet">Tricks included sit pretty, "footsies", leg weaves, jump over arms,"orbit", back stall, and rebound</li>
+<li class="jobs-Trick Dogs-bullet jobs-bullet subsection-bullet">Trained behaviors are reliable in varying environments from the backyard to pet friendly stores</li>
+<li class="jobs-Trick Dogs-bullet jobs-bullet subsection-bullet">Trained dogs have also performed shows for local events and parades</li>
+            </ul>
+        
+    
+        </div>
+    
+        </body>
+        </html>

@@ -1,4 +1,19 @@
+// Things that don't change, that are applicable for any resume. This describes *you*
 {
+    "name": "Copeland Carter",
+    "education": {
+        "BYUI": {
+            "title": "Brigham Young University - Idaho",
+            "subtitle": "April 2019 - July 2024",
+            "desc": "Graduated with a Bachelor's in <strong>Computer Engineering</strong> with a <strong>Machine Learning</strong> Certificate",
+        },
+    },
+    "contact_info": {
+        "phone": "(208) 513-0110",
+        "email": "smartycope@gmail.com",
+        "github": "github.com/smartycope",
+        "website": "smartycope.org"
+    },
     "projects": {
         "EZRegex": {
             "title": "EZRegex",

@@ -1,0 +1,88 @@
+// Things that don't change, that are applicable for any resume. This describes *you*
+{
+    "name": "Moriah Carter",
+    "education": {
+        "BYUI": {
+            "title": "Brigham Young University - Idaho",
+            "desc": "Graduated with a Bachelor of Science in Animal Science with a Pre-Veterinarian focus",
+            "subtitle": "April 2019 - July 2024"
+        },
+        "AI Cert": {
+            "title": "State of Idaho Artificial Insemination Certificate",
+            "subtitle": "July 2024"
+        }
+    },
+    "contact_info": {
+        "phone": "(901) 453-9582",
+        "email": "moriahfaithann0409@gmail.com",
+        "website": "cartercanines.com"
+    },
+    "projects": {
+        "Beretta": {
+            "title": "Beretta",
+            "subtitle": "Belgian Malinois Mix",
+            "desc": "Beretta is an 18 month old Belgian Malinois Mix. She was adopted 9 months ago and in that time she has learned canine freestyle. Tricks include jump over arms, orbit, rebound, leg weaves, and backstall. Beretta has also been taught on agility equipment to incorporate into routines. Beretta is currently learning footstall and being introduced to disc."
+        },
+        "Trixie": {
+            "title": "Trixie",
+            "subtitle": "Standard Poodle",
+            "desc": "Trixie is an 8 year old Standard Poodle. She was my first dog and allowed me to explore many training avenues. Trixie does best at trick events such as high jump, but can also perform in canine freestyle as she has at parades and dog based events. She most recently started on scentwork in barnhunt and is very enthusiastic in the sport."
+        },
+        "Millie": {
+            "title": "Millie",
+            "subtitle": "Beagle",
+            "desc": "Millie is a 5 year old Beagle. She will do anything for a scrap of food. This has allowed me to explore further into scentwork using traditional scents. Millie is also known to enjoy performing tricks and has been known to do tandem routines with Trixie."
+        }
+    },
+    "jobs": {
+        "K9 Direction": {
+            "title": "K9 Direction",
+            "subtitle": "Service Dog Trainer",
+            "bullets": [
+                "Taught basic behaviors to prospective service dogs for a non-profit organization, and shaped those behaviors into more advanced tasks, including medical alert, psychiatric response, and mobility tasks",
+                "Conducted dog training sessions daily in various locations including home, parks, and non-pet friendly businesses"
+            ]
+        },
+        "Crate Escape Memphis": {
+            "title": "Crate Escape Memphis",
+            "subtitle": "Dog Trainer",
+            "bullets": [
+                "Trained desired behaviors for companion dogs in pet homes",
+                "Taught dogs in a variety of locations including at home, parks, and pet friendly stores",
+                "Maintained dog health while in my care including feeding, grooming, and bathing",
+                "Professionally communicated training methods and plans with owners to achieve the desired behaviors with their dogs and puppies"
+            ]
+        },
+        "Service Dogs": {
+            "title": "Service Dogs",
+            "subtitle": "Dog Trainer",
+            "bullets": [
+                "Independently trained medical alert, psychiatric alert and response, and mobility tasks. ",
+                "Tasks included heart rate alert, deep pressure therapy, directed retrieval, counterbalance, stability, blocking, public access etiquette, turning lights off, medication retrieval, and more ",
+                "Trained behaviors were reliable in varying environments from the classroom to Disney World for multiple years"
+            ]
+        },
+        "Trick Dogs": {
+            "title": "Trick Dogs",
+            "subtitle": "Dog Trainer",
+            "bullets": [
+                "Trained a variety of tricks ranging in difficulty from basic obedience to advanced.",
+                "Tricks included sit pretty, \"footsies\", leg weaves, jump over arms,\"orbit\", back stall, and rebound",
+                "Trained behaviors are reliable in varying environments from the backyard to pet friendly stores",
+                "Trained dogs have also performed shows for local events and parades"
+            ]
+        }
+    },
+    // "soft_skills": {
+    //     // "Quick Learner": "At Accendero, I went from never having written a line of JavaScript to contributing helpful commits in one week",
+    //     "Quick Learner": "Contributed meaningful JavaScript commits at Accendero after a single week of learning the language",
+    //     // "Trainable": "At Acer, before my training period was even over I had surpassed all of my coworkers and was handed off several of my manager's responsibilities",
+    //     "Trainable": "Exceeded training expectations at Acer, quickly outpacing peers and assuming management responsibilities before the training period was completed",
+    //     // "Communication": "Even as head of IT for an assisted living center, I was able to communicate technical issues effectively",
+    //     "Communication": "Effectively communicated technical issues to non-technical residents while head of IT at an assisted living facility",
+    //     // "Technical Writing": "At Acer, I wrote dozens of reports daily describing exactly what was done in the repair",
+    //     "Technical Writing": "Generated dozens of detailed repair summaries daily, ensuring traceability and transparency of work",
+    //     // "Honesty": "Though I am proficient at using AI, all of the projects above were written without the aid of AI"
+    //     "Honesty": "While proficient in AI tools, all projects listed above were completed independently, without AI assistance"
+    // }
+}

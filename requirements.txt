@@ -4,3 +4,4 @@ streamlit_code_editor
 chromedriver-autoinstaller
 selenium
 json-with-comments
+streamlit_sortables

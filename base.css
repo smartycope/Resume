@@ -2,13 +2,6 @@
     box-sizing: border-box;
 }
 
-@font-face {
-    font-family: 'xkcd-script';
-    /* src: url('./fonts/xkcd-script.ttf') format('truetype'); */
-    src: url('xkcd-script.ttf') format('truetype');
-}
-
-
 body {
     /* font-family: Arial, sans-serif; */
     /* font-family: 'Georgia', serif; */
@@ -108,10 +101,8 @@ h2 {
 #github-icon2{
     /* float: inline-start; */
     /* position: ab; */
-    
+
 }
-
-
 
 a {
     text-decoration: none;
@@ -126,7 +117,7 @@ li {
     margin-bottom: 0.3em;
 }
 
-.skills-columns {
+.skills-bullets {
     display: grid;
     /* I don't know how this works, but it does */
     /* grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); */
@@ -135,7 +126,7 @@ li {
     margin-top: 0.5em;
 }
 
-.skills-columns div {
+.skills-bullets div {
     white-space: pre-wrap;
 }
 
@@ -150,7 +141,7 @@ li {
 }
 
 #title{
-    font-size: 14pt; 
+    font-size: 14pt;
     text-align: center;
     font-weight: normal;
     margin-bottom: 0.1em;
@@ -158,7 +149,16 @@ li {
     color: #d6d4d4;
 }
 
-.section-desc{
+.education-desc{
+    /* text-align: right; */
+    /* float: right; */
+    /* font-weight: normal; */
+    /* color: #494747; */
+    /* italicize */
+    font-style: italic;
+}
+
+.subsection-subtitle{
     /* text-align: right; */
     float: right;
     font-weight: normal;
