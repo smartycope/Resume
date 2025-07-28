@@ -1,7 +1,7 @@
 {
     "Software Engineering": {
         "abbr": "se",
-        "title": "Software Engineer | Backend Developer",
+        "title": "Software Engineer | Data Scientist",
         "contact_info": {
             "phone": true,
             "email": true,
@@ -9,13 +9,14 @@
             "website": true
         },
         "projects": [
-            "EZRegex",
-            "GeoDoodle",
-            "Senior Project"
+            "*EZRegex",
+            "*GeoDoodle",
+            "*Building Predictions"
         ],
         "jobs": [
-            "Acer",
-            "Accendero"
+            "*Freelance",
+            "*Acer",
+            "*Accendero"
         ],
         "soft_skills": [
             "Quick Learner",
@@ -23,10 +24,10 @@
             "Honesty"
         ],
         "skills": {
-            "Languages": "Python, TypeScript, R, HTML/CSS",
-            "CI/CD": "Git, Bash Scripting, Jira, Docker",
-            "Backend": "Django, Databases, Linux, REST APIs",
-            "Frontend": "React/JSX, UI/UX, GitHub Pages"
+            "Languages": "Python, Java/TypeScript, R, HTML/CSS",
+            "CI/CD": "Git, Bash, Jira, Docker, Agentic AI",
+            "Backend": "Django, Databases, Linux, APIs, 3NF, Firebase",
+            "Frontend": "React.JS, UI/UX, Material UI, WordPress"
         },
         "education": [
             "BYUI"
@@ -35,8 +36,7 @@
             "skills",
             "education",
             "projects",
-            "jobs",
-            "soft_skills"
+            "jobs"
         ],
         "section_titles": {
             "skills": "Skills",
@@ -56,14 +56,14 @@
             "website": true
         },
         "projects": [
-            "EZRegex",
-            "Client Work",
-            "Senior Project",
-            "AntAI"
+            "*EZRegex",
+            "*Client Work",
+            "*Senior Project",
+            "*AntAI"
         ],
         "jobs": [
-            "Outlier",
-            "Accendero"
+            "*Outlier",
+            "*Accendero"
         ],
         "soft_skills": [],
         "skills": {
@@ -100,14 +100,14 @@
             "website": true
         },
         "projects": [
-            "EZRegex",
+            "*EZRegex",
             "Door Alarm",
-            "GeoDoodle",
+            "*GeoDoodle",
             "Self-Balancing Robot"
         ],
         "jobs": [
-            "Acer",
-            "Accendero"
+            "*Acer",
+            "*Accendero"
         ],
         "soft_skills": [
             "Quick Learner",

@@ -5,6 +5,7 @@ A dynamic resume builder that allows you to build a resume from a set of pre-def
 ## Paths
 The `setup_folder` is the folder that contains all the files that are used to build the resume. You can specify it in the sidebar.
 - `resume_builder.py` - The main streamlit application to run
+- `html_parts.py` - The HTML parts of the resume. You can change this if you want to change the HTML layout of the resume
 - `<setup_folder>/configs.jsonc` - Pre-defined resumes to use as bases
 - `<setup_folder>/data.jsonc` - The data for all the resumes
 - `<setup_folder>/icons.jsonc` - The icons

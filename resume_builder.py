@@ -1,10 +1,12 @@
 from pathlib import Path
+
+import jsonc
 import streamlit as st
 from streamlit_pdf_viewer import pdf_viewer
 from streamlit_sortables import sort_items
-from file_handling import save, get_pdf
-import jsonc
-from SemVer import SemVer, get_last_version
+
+from file_handling import get_pdf, save
+from SemVer import get_last_version
 
 
 @st.cache_data
@@ -33,7 +35,6 @@ with st.sidebar:
         setup_folder = l.text_input('Setup Folder', './Cope', key='data', help='The folder containing the configs.jsonc, data.jsonc, and icons.jsonc files')
         if r.button('Reload'):
             load.clear()
-            st.rerun()
 
         if not setup_folder:
             st.stop()
@@ -53,7 +54,7 @@ with st.sidebar:
         new_version = get_last_version(folder).increment()
         default = f'{new_version}.{CONFIG[base].get("abbr", "")}'
         name = st.text_input('Filename', placeholder=default)
-        if name == '':
+        if name.strip() == '':
             name = default
         name = f'Resumé {name}'.strip()
 
@@ -73,18 +74,17 @@ with st.sidebar:
             config['contact_info']['github'] = st.checkbox('Github', value=config.get('contact_info', {}).get('github', False))
             config['contact_info']['website'] = st.checkbox('Website', value=config.get('contact_info', {}).get('website', False))
 
-        if 'skills' in config['order']:
-            "Skills"
-            skills = st.data_editor(config.get('skills', {}))
-            if st.form_submit_button('Add Skill'):
-                skills = config.get('skills', {})
-                skills['tmp'] = ''
-                config['skills'] = skills
-                st.rerun()
-
         # Display only the ones we've specified, and in the order we specified (why not?)
         for section in config['order']:
             match section:
+                case 'skills':
+                    "Skills"
+                    config['skills'] = st.data_editor(config.get('skills', {}))
+                    if st.form_submit_button('Add Skill'):
+                        skills = config.get('skills', {})
+                        skills['tmp'] = ''
+                        config['skills'] = skills
+                        st.rerun()
                 case 'summary':
                     config['summary'] = st.text_area('Summary', config.get('summary'))
 
@@ -134,12 +134,12 @@ with st.sidebar:
                         {'header': 'Selected References', 'items': config.get('references', [])}
                     ], multi_containers=True)[1]['items']
 
-        reset_html = st.form_submit_button('Generate Resume')
+        st.form_submit_button('Generate Resume')
 
     html = generate_html(config)
 
-    if reset_html:
-        st.session_state['html'] = {'text': html}
+    # if generate or reload_html:
+        # st.session_state['html'] = {'text': html}
 
     # Edit the HTML directly, if necissary
     # with st.expander('Source'):

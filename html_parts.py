@@ -1,24 +1,29 @@
 import streamlit as st
 from pathlib import Path
 import jsonc
+from streamlit import session_state as ss
 
-if 'loaded' not in st.session_state:
+if 'loaded' not in ss or ss['loaded'] is None:
     st.stop()
-CONFIG, SECTIONS, DATA, ICONS, CSS = st.session_state['loaded']
+
+# _, _, DATA, ICONS, _ = ss['loaded']
+CSS = 4
+ICONS = 3
+DATA = 2
 
 def head():
     return f"""
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>{DATA['name']} - Resume</title>
-            <style>{CSS}</style>
+            <title>{ss['loaded'][DATA]['name']} - Resume</title>
+            <style>{ss['loaded'][CSS]}</style>
         </head>
         """
 
 def title(config):
     return f"""<div class="header">
-            <h1 id="name">{DATA['name']}</h1>
+            <h1 id="name">{ss['loaded'][DATA]['name']}</h1>
             <h2 id="title">{config['title']}</h2>
         </div>"""
 
@@ -42,17 +47,18 @@ def format_reference(reference, info):
 
 def sub_section(main, subsection):
     """ Formats a single section of the resume """
-    if main not in DATA:
+    data = ss['loaded'][DATA]
+    if main not in data:
         raise KeyError(f"Main section {main} not found in data")
-    if subsection not in DATA[main]:
+    if subsection not in data[main]:
         raise KeyError(f"Subsection {subsection} not found in data")
 
-    if 'desc' in DATA[main][subsection]:
-        body = f'<p class="{main}-desc subsection-desc" id="{main}-{subsection}-desc">{DATA[main][subsection]["desc"]}</p>'
-    elif 'bullets' in DATA[main][subsection]:
+    if 'desc' in data[main][subsection]:
+        body = f'<p class="{main}-desc subsection-desc" id="{main}-{subsection}-desc">{data[main][subsection]["desc"]}</p>'
+    elif 'bullets' in data[main][subsection]:
         body = f"""
             <ul class="{main}-bullets subsection-bullets" id="{main}-{subsection}-bullets">
-                {'\n'.join(f"<li class=\"{main}-{subsection}-bullet {main}-bullet subsection-bullet\">{i}</li>" for i in DATA[main][subsection]["bullets"])}
+                {'\n'.join(f"<li class=\"{main}-{subsection}-bullet {main}-bullet subsection-bullet\">{i}</li>" for i in data[main][subsection]["bullets"])}
             </ul>
         """
     else:
@@ -60,10 +66,10 @@ def sub_section(main, subsection):
     return f'''
         <p class="{main} subsection" id="{main}-{subsection}">
             <strong id="{main}-{subsection}-title" class="{main}-title subsection-title">
-                {DATA[main][subsection]['title']}
+                {data[main][subsection]['title']}
             </strong>
             <span id="{main}-{subsection}-subtitle" class="{main}-subtitle subsection-subtitle">
-                {DATA[main][subsection].get('subtitle', '').format(**ICONS)}
+                {data[main][subsection].get('subtitle', '').format(**ss['loaded'][ICONS])}
             </span>
         </p>
         {body}
@@ -122,26 +128,27 @@ def jobs(config):
 def soft_skills(config):
     if 'soft_skills' not in config:
         return ''
-    return f"""<ul class="soft-skills-bullets">{'\n'.join(format_soft_skill(i, DATA['soft_skills'][i]) for i in config['soft_skills'])}</ul>"""
+    return f"""<ul class="soft-skills-bullets">{'\n'.join(format_soft_skill(i, ss['loaded'][DATA]['soft_skills'][i]) for i in config['soft_skills'])}</ul>"""
 
 def references(config):
     if 'references' not in config:
         return ''
-    return '\n'.join(format_reference(i, DATA['references'][i]) for i in config['references'])
+    return '\n'.join(format_reference(i, ss['loaded'][DATA]['references'][i]) for i in config['references'])
 
 def sections(config):
     return '\n'.join(section(config['section_titles'][part], globals()[part](config)) for part in config['order'])
 
 def contact_info(config):
+    data = ss['loaded'][DATA]
     s = []
     if config['contact_info']['phone']:
-        s.append(f'{ICONS.get("phone_icon", "")} {DATA.get("contact_info", {}).get("phone", "")}')
+        s.append(f'{ss['loaded'][ICONS].get("phone_icon", "")} {data.get("contact_info", {}).get("phone", "")}')
     if config['contact_info']['email']:
-        s.append(f'{ICONS.get("email_icon", "")} <a href="mailto:{DATA.get("contact_info", {}).get("email", "")}">{DATA.get("contact_info", {}).get("email", "")}</a>')
+        s.append(f'{ss['loaded'][ICONS].get("email_icon", "")} <a href="mailto:{data.get("contact_info", {}).get("email", "")}">{data.get("contact_info", {}).get("email", "")}</a>')
     if config['contact_info']['github']:
-        s.append(f'{ICONS.get("github_icon", "")} <a href="https://{DATA.get("contact_info", {}).get("github", "")}">{DATA.get("contact_info", {}).get("github", "")}</a>')
+        s.append(f'{ss['loaded'][ICONS].get("github_icon", "")} <a href="https://{data.get("contact_info", {}).get("github", "")}">{data.get("contact_info", {}).get("github", "")}</a>')
     if config['contact_info']['website']:
-        s.append(f'{ICONS.get("website_icon", "")} <a href="https://{DATA.get("contact_info", {}).get("website", "")}">{DATA.get("contact_info", {}).get("website", "")}</a>')
+        s.append(f'{ss['loaded'][ICONS].get("website_icon", "")} <a href="https://{data.get("contact_info", {}).get("website", "")}">{data.get("contact_info", {}).get("website", "")}</a>')
     return f"""
         <div class="contact-info">
             {' | '.join(s)}
@@ -155,7 +162,7 @@ def generate_html(config):
         <html lang="en">
         {head()}
         <body>
-            {ICONS.get('personal_icon', '')}
+            {ss['loaded'][ICONS].get('personal_icon', '')}
             {title(config)}
             {contact_info(config)}
             {sections(config)}
